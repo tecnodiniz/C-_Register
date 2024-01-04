@@ -1,0 +1,32 @@
+﻿DROP TABLE IF EXISTS Employees ;
+DROP TABLE IF EXISTS Users;
+
+CREATE TABLE Users(
+id int IDENTITY(1,1) PRIMARY KEY,
+userLogin varchar(32) not null,
+userPassword varchar(255) not null,
+userName varchar(255) not null
+);
+
+CREATE TABLE Employees(
+id int IDENTITY(1,1) PRIMARY KEY,
+name varchar(32) not null,
+description varchar(255) not null,
+userId int not null,
+last_altered varchar(32) DEFAULT 'Sem alterações',
+FOREIGN KEY (userId) REFERENCES Users (id)
+);
+
+INSERT INTO Users (userLogin,userPassword,userName) VALUES
+	('Diniz', 'administrator','Eduardo Diniz'),
+	('hdiniz', '123','Henrique Pereira');
+
+INSERT INTO Employees(name,description,userId)  VALUES
+	('Agostinho Yuri Caldeira Molina', 'Analista', 1),
+	('Olívia Josiane Beltrão Medina', 'Desenvolvedor', 1),
+	('Bruno Renato Franco Coutinho', 'Engenheiro', 1),
+	('Camila Aragão de Álvares', 'Web Design', 2),
+	('Mateus Nivaldo Azevedo de Cruz', 'Database Enginner', 2),
+	('Gilberto Uribe de Burgos Jr.', 'Back end developer', 1),
+	('Geraldo Leandro de Chaves Neto', 'Front end developer', 1),
+	('Emília Galvão Gomes', 'Fullstack developer', 2);
