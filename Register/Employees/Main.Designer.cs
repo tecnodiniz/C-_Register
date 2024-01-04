@@ -31,7 +31,6 @@ namespace Register
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -39,19 +38,20 @@ namespace Register
             this.btnLoad = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.database1DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.searchBox = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.btnUsers = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmployee)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewEmployee
             // 
             this.dataGridViewEmployee.AllowUserToAddRows = false;
             this.dataGridViewEmployee.AllowUserToDeleteRows = false;
+            this.dataGridViewEmployee.AllowUserToResizeColumns = false;
+            this.dataGridViewEmployee.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewEmployee.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
@@ -150,12 +150,23 @@ namespace Register
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
+            // btnUsers
+            // 
+            this.btnUsers.Location = new System.Drawing.Point(194, 12);
+            this.btnUsers.Name = "btnUsers";
+            this.btnUsers.Size = new System.Drawing.Size(75, 23);
+            this.btnUsers.TabIndex = 8;
+            this.btnUsers.Text = "Usuários";
+            this.btnUsers.UseVisualStyleBackColor = true;
+            this.btnUsers.Click += new System.EventHandler(this.btnUsers_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(763, 361);
             this.ControlBox = false;
+            this.Controls.Add(this.btnUsers);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.searchBox);
             this.Controls.Add(this.label2);
@@ -170,7 +181,6 @@ namespace Register
             this.Text = "Funcionários";
             this.Load += new System.EventHandler(this.Main_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmployee)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -182,10 +192,10 @@ namespace Register
         private System.Windows.Forms.Button btnLoad;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.BindingSource database1DataSetBindingSource;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox searchBox;
         private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Button btnUsers;
     }
 }

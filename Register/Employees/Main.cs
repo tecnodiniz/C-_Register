@@ -201,8 +201,8 @@ namespace Register
             timer.Interval = 1000;
             timer.Tick += atualizarHora;
             timer.Start();
-            
 
+            if (this.user.role != role.Administrator) btnUsers.Visible = false;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -236,6 +236,12 @@ namespace Register
                 List<Employee> employees = _context.Employees.Where(em => em.Name.Contains(searchBox.Text)).ToList();
                 dataGridViewEmployee.DataSource = employees;
             }
+        }
+
+        private void btnUsers_Click(object sender, EventArgs e)
+        {
+            Users.main main = new Users.main();
+            main.Show();
         }
     }
 }

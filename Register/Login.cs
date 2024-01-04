@@ -58,7 +58,7 @@ namespace Register
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+          
         }
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {

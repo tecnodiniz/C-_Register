@@ -5,7 +5,8 @@ CREATE TABLE Users(
 id int IDENTITY(1,1) PRIMARY KEY,
 userLogin varchar(32) not null,
 userPassword varchar(255) not null,
-userName varchar(255) not null
+userName varchar(255) not null,
+userRole int DEFAULT 0 
 );
 
 CREATE TABLE Employees(
@@ -17,9 +18,9 @@ last_altered varchar(32) DEFAULT 'Sem alterações',
 FOREIGN KEY (userId) REFERENCES Users (id)
 );
 
-INSERT INTO Users (userLogin,userPassword,userName) VALUES
-	('Diniz', 'administrator','Eduardo Diniz'),
-	('hdiniz', '123','Henrique Pereira');
+INSERT INTO Users (userLogin,userPassword,userName,userRole) VALUES
+	('Diniz', 'administrator','Eduardo Diniz',1),
+	('hdiniz', '123','Henrique Pereira',0);
 
 INSERT INTO Employees(name,description,userId)  VALUES
 	('Agostinho Yuri Caldeira Molina', 'Analista', 1),
